@@ -1,0 +1,93 @@
+.deliveryCard{
+    width: 320px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 2px;
+    gap: 2px;
+    position: relative;
+    cursor: pointer;
+}
+.deliveryCard:hover{
+    scale: 1.02;
+}
+.deliveryCardImage{
+    width: 320px;
+    height: 240px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.saleOff{
+    position: absolute;
+    text-align: center;
+    bottom: 8rem;
+    left: .7rem;
+    padding: 4px;
+    border-radius: 4px;
+    width: 5rem;
+    background-color: #37c6ff;
+    color: white;
+}
+.deliveryCardImage img{
+    width: 310px;
+    height: 225px;
+    border-radius: 10px;
+}
+.deliveryCardTitle{
+    display: flex;
+    width: 100%;
+   justify-content: space-between;
+   padding: 0 7px;
+   margin-top: 5px;
+}
+.cardTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+.rating{
+    background-color: green;
+    width: 3rem;
+    padding: 2px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+}
+.cardDetails{
+    display:flex;
+    width: 100%;
+    align-items: center;
+    padding: 0 4px;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+.cardDetail{
+    font-size: 14px;
+    opacity: 0.9;
+    padding: 0 5px;
+    font-weight: 400;
+}
+.cardPrice{
+    font-size: 14px;
+}
+.timing{
+    width: 100%;
+    display: flex;
+    padding: 0 5px;
+    font-weight: 400;
+    font-size: 12px;
+    padding: 0 9px;
+    margin-top: 2px;
+}
+.timing span{
+    margin: 0 4px;
+}

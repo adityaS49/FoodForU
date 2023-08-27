@@ -1,0 +1,37 @@
+.select {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.selectWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.selectWrapperItem {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.selectWrapperItemLogo {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: rgb(234, 233, 233);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.selectWrapperItemHeading {
+  text-align: center;
+  padding: 10px;
+}
+.selectWrapperItemHeading h1 {
+  font-size: 20px;
+  font-weight: 400;
+  color: rgb(174, 174, 198);
+}

@@ -1,0 +1,126 @@
+.cartBanner {
+  display: flex;
+  padding: 20px;
+  border: 2px solid red;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  gap: 2rem;
+  width: 50%;
+}
+.account {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 20px;
+  background-color: aliceblue;
+}
+.heading h1 {
+  font-size: 18px;
+  font-weight: 600;
+  color: gray;
+}
+.account p {
+  font-size: 16px;
+  color: grey;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.credentials {
+  display: flex;
+  gap: 2rem;
+}
+.credentials .login {
+  border: 1px solid rgb(12, 181, 12);
+  padding: 5px 15px;
+  font-size: 14px;
+  color: rgb(28, 161, 13);
+}
+.credentials .log {
+  font-weight: 500;
+}
+.credentials .sign {
+  font-weight: 500;
+}
+.credentials .signUp {
+  background-color: rgb(16, 178, 16);
+  padding: 5px 15px;
+  font-size: 14px;
+  color: white;
+}
+.address {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 20px;
+  background-color: aliceblue;
+}
+.payment {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 20px;
+
+  background-color: aliceblue;
+}
+.right {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid green;
+  padding: 20px 10px;
+  gap: 2rem;
+}
+
+.billing {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 20px;
+  border-top: 1px solid grey;
+}
+.itemsBill {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0px 15px 1px -15px #111;
+  padding-bottom: 10px;
+}
+.billDetails {
+  font-size: 14px;
+}
+.itemsPrice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.fees {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid black;
+}
+.platformFees {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.Gst {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.totalPrice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
