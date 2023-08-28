@@ -2,8 +2,9 @@
 import { React, useContext } from "react";
 import styles from "./cartPanel.module.css";
 import { CurrencyRupee } from "@mui/icons-material";
-import {AppContext} from "@/components/Context/AppContext";
+import { AppContext } from "@/components/Context/AppContext";
 import Image from "next/image";
+import Link from "next/link";
 const CartPanel = () => {
   const context = useContext(AppContext);
   console.log(context.cartItems);
@@ -14,10 +15,11 @@ const CartPanel = () => {
         ? { ...cartItem, count: cartItem.count + 1 }
         : cartItem
     );
-    const filteredCartItems = updatedCartItems.filter((cartItem) => cartItem.count > 0);
+    const filteredCartItems = updatedCartItems.filter(
+      (cartItem) => cartItem.count > 0
+    );
 
     context.setCartItems(filteredCartItems);
-
 
     const newTotalPrice = updatedCartItems.reduce((total, cartItem) => {
       return total + cartItem.price * cartItem.count;
@@ -26,23 +28,23 @@ const CartPanel = () => {
   };
 
   const handleDecrement = (item) => {
-
-  const updatedCartItems = context.cartItems.map((cartItem) =>
+    const updatedCartItems = context.cartItems.map((cartItem) =>
       cartItem.id === item.id && cartItem.count > 0
         ? { ...cartItem, count: cartItem.count - 1 }
         : cartItem
     );
-    const filteredCartItems = updatedCartItems.filter((cartItem) => cartItem.count > 0);
+    const filteredCartItems = updatedCartItems.filter(
+      (cartItem) => cartItem.count > 0
+    );
 
     context.setCartItems(filteredCartItems);
-
 
     const newTotalPrice = updatedCartItems.reduce((total, cartItem) => {
       return total + cartItem.price * cartItem.count;
     }, 0);
     context.setTotalPrice(newTotalPrice);
   };
-  
+
   const filteredCartItems = context.cartItems.filter((item) => item.count > 0);
 
   return (
@@ -57,16 +59,20 @@ const CartPanel = () => {
             </p>
           </div>
           <div className={styles.credentials}>
-            <button className={styles.login}>
-              Have an Account?
-              <br />
-              <span className={styles.log}> Login-Up</span>
-            </button>
-            <button className={styles.signUp}>
-              New to OrderKaro?
-              <br />
-              <span className={styles.sign}>Sign-Up</span>
-            </button>
+            <Link href="/login">
+              <button className={styles.login}>
+                Have an Account?
+                <br />
+                <span className={styles.log}> Login-Up</span>
+              </button>
+            </Link>
+            <Link href="/signup">
+              <button className={styles.signUp}>
+                New to OrderKaro?
+                <br />
+                <span className={styles.sign}>Sign-Up</span>
+              </button>
+            </Link>
           </div>
         </div>
         <div className={styles.address}>
