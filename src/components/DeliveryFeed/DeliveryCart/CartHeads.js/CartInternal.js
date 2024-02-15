@@ -49,7 +49,6 @@ const CartInternal = ({ t }) => {
           <div className={styles.add}>
             <div>
               <AddButton  v={t} key = {t.id} />
-
             </div>
           </div>
         </div>

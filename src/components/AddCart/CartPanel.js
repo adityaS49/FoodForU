@@ -1,14 +1,30 @@
 "use client";
-import { React, useContext } from "react";
+import { React, useContext, useState } from "react";
 import styles from "./cartPanel.module.css";
-import { CurrencyRupee } from "@mui/icons-material";
+import { CurrencyRupee, LocationOn, Payment, Person } from "@mui/icons-material";
 import { AppContext } from "@/components/Context/AppContext";
 import Image from "next/image";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
+import AddressForm from "../deliveryaddresss/AddressForm";
+import DeliveryAddress from "../deliveryaddresss/DeliveryAddress";
+
 const CartPanel = () => {
+  const { data: session } = useSession();;
+
   const context = useContext(AppContext);
-  console.log(context.cartItems);
-  console.log(context.totalPrice);
+  const { showAddressForm , setShowAddressForm  } = useContext(AppContext);
+  {
+    context.cartItems?(
+      console.log(context.cartItems)
+    ):null
+  }
+  {
+    context.totalPrice?(
+      console.log(context.totalPrice)
+    ):null
+  }
+
   const handleIncrement = (item) => {
     const updatedCartItems = context.cartItems.map((cartItem) =>
       cartItem.id === item.id
@@ -50,38 +66,65 @@ const CartPanel = () => {
   return (
     <div className={styles.cartBanner}>
       <div className={styles.left}>
-        <div className={styles.account}>
-          <div className={styles.heading}>
-            <h1>Account</h1>
-            <p>
-              To place your order now, log in to your existing account or sign
-              up.
-            </p>
+        {!session ? (
+          <div className={styles.account}>
+            <div className={styles.heading}>
+            <div className="bg-zinc-200 ml-[-3rem] shadow-sm rounded p-3 w-fit">
+            <Person/>
           </div>
-          <div className={styles.credentials}>
-            <Link href="/login">
-              <button className={styles.login}>
-                Have an Account?
-                <br />
-                <span className={styles.log}> Login-Up</span>
-              </button>
-            </Link>
-            <Link href="/signup">
-              <button className={styles.signUp}>
-                New to OrderKaro?
-                <br />
-                <span className={styles.sign}>Sign-Up</span>
-              </button>
-            </Link>
+              <h1>Account</h1>
+              <p>
+                To place your order now, log in to your existing account or sign
+                up.
+              </p>
+            </div>
+            <div className={styles.credentials}>
+              <Link href="/login">
+                <button className={styles.login}>
+                  Have an Account?
+                  <br />
+                  <span className={styles.log}> Login-Up</span>
+                </button>
+              </Link>
+              <Link href="/signup">
+                <button className={styles.signUp}>
+                  New to OrderKaro?
+                  <br />
+                  <span className={styles.sign}>Sign-Up</span>
+                </button>
+              </Link>
+            </div>
           </div>
-        </div>
+        ) : (
+          ""
+        )}
+
         <div className={styles.address}>
           <div className={styles.heading}>
-            <h1>Delivery Address</h1>
+            <div className="bg-zinc-200 ml-[-3rem] shadow-sm rounded p-3 w-fit">
+              <LocationOn/>
+            </div>
+             <h1>Delivery Address</h1>
           </div>
+          
+          <DeliveryAddress/>
+          <div>
+          <button className="px-4 py-2 bg-gray-500 text-white" onClick={()=>setShowAddressForm(!showAddressForm)}>
+          {showAddressForm?"Hide AddressForm":"Add New Address"}
+        </button>
+          </div>
+          {
+            showAddressForm?(
+              <AddressForm/>
+            ):null
+          }
+          
         </div>
         <div className={styles.payment}>
           <div className={styles.heading}>
+          <div className="bg-zinc-200 ml-[-3rem] shadow-sm rounded p-3 w-fit">
+              <Payment/>
+            </div>
             <h1>Payment</h1>
           </div>
         </div>
@@ -205,10 +248,18 @@ const CartPanel = () => {
           </div>
         </div>
       ) : (
-        <div className={styles.right}>
-          <h1 className="text-center text-[20px] font-bold py-10">
-            Cart is empty!!
-          </h1>
+        <div className="flex flex-col items-center justify-center w-[35%] h-[600px] gap-8">
+        <div className="gap-2">
+        <h1 className="text-center text-[20px] font-bold ">
+        Oppsss!! Your Cart is empty🙄
+        </h1>
+        <p>You can go to home page to view more restaurants</p>
+        </div>
+          <div className="bg-orange-500 rounded p-4 cursor-pointer">
+            <Link href="/delivery">
+              <h6 className="text-white font-bold">SEE RESTAURANTS NEAR YOU</h6>
+            </Link>
+          </div>
         </div>
       )}
     </div>

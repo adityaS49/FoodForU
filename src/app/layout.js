@@ -3,6 +3,7 @@ import './globals.css'
 import { useState} from 'react'
 import { Inter } from 'next/font/google'
 import {AppContext,CartProvider} from '@/components/Context/AppContext'
+import { AuthProvider } from './Providers'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,7 +18,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <CartProvider>
       <body className={inter.className}>
+      <AuthProvider >
       {children}  
+      </AuthProvider>
       </body>
     </CartProvider>
     </html>

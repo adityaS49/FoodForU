@@ -7,7 +7,17 @@ const CartProvider=({children})=>{
     const [idContext,setIdContext] = useState(1);
       const [cartItems, setCartItems] = useState([]);
       const [totalPrice, setTotalPrice] = useState(0);
-    
+      const [addresses, setAddresses] = useState([]);
+      const [showAddressForm,setShowAddressForm] = useState(false);
+      const [currentEdittedAddressId,setCurrentEdittedAddressId ] = useState(null);
+      const [addressFormData, setAddressFormData] = useState({
+        name: "",
+        streetAddress: "",
+        city: "",
+        state: "",
+        postalCode: "",
+        UserID:""
+      });
       // Inside your addItemToCart function
       const addItemToCart = (item) => {
         const existingCartItem = cartItems.find(cartItem => cartItem.id === item.id);
@@ -43,7 +53,7 @@ const CartProvider=({children})=>{
       };
 
       return(
-        <AppContext.Provider value={{idContext,setIdContext,cartItems,setCartItems,totalPrice,cartContextValue,setTotalPrice,cartContextValue}}>
+        <AppContext.Provider value={{idContext,setIdContext,cartItems,setCartItems,totalPrice,cartContextValue,setTotalPrice,cartContextValue,addresses,setAddresses,addressFormData,setAddressFormData,currentEdittedAddressId,setCurrentEdittedAddressId,showAddressForm,setShowAddressForm }}>
       
       {children}
     </AppContext.Provider>

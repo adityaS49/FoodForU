@@ -3,28 +3,26 @@ import Link from "next/link";
 import { Search } from "@mui/icons-material";
 import "./BannerCard.css";
 import Header from "../Header";
+import Image from "next/image";
 
 const BannerCard = () => {
   const handleClick = () => {};
   return (
     <>
       <Header />
-      <div className="w-[100%] flex items-center justify-center">
-        <div className="banner">
+      <div className="flex  h-[600px] items-center bg-[#fff] justify-center">
+      <div className="  ml-[4rem] w-[40%]">   
+        <Image className=" flex rounded-full" width={800} height={400} src='/assets/banner3.png'/>
+      </div>
+        <div className="banner relative">
+        <Image width={150} height={150} className="absolute top-[-6rem] right-[2rem] rounded-full"  src="/assets/Chef.webp"></Image>
           <div className="bannerHeading">
-            <h1>OrderKaro</h1>
+            <h1>Ready To Serve...</h1>
           </div>
           <div className="bannerPara">
-            <h3>Discover the best food & drinks in Ranchi</h3>
+            <h3>Discover the best food & drinks and Enjoy leasure life!!</h3>
           </div>
-          <div className="searchBar">
-            <Search style={{ color: "black" }} />
-            <input
-              placeholder="Search for restaurant, cuisine, or a dish"
-              className="w-[80%] h-[50px]"
-              type="text"
-            />
-          </div>
+         
         </div>
       </div>
       <div className="nav-pages">
@@ -73,6 +71,8 @@ const BannerCard = () => {
           <img src="/assets/nightlife.webp" alt="" />
         </div>
       </div>
+
+      
     </>
   );
 };

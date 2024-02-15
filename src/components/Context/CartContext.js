@@ -9,9 +9,9 @@ export const useCart = () => {
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
-
+  
   const addItemToCart = (item) => {
-    setCartItems([...cartItems, item]);
+    setCartItems([...cartItems, item]); 
     setTotalPrice(totalPrice + item.price);
   };
 
