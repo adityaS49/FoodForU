@@ -1,6 +1,7 @@
 import { Foods } from "@/Data/Delivery/FoodItems/FoodItemsData";
 import React from "react";
 import "./FoodItems.css";
+import Image from "next/image";
 const FoodItems = () => {
 
  
@@ -13,7 +14,7 @@ const FoodItems = () => {
         {Foods.map((u) => (
           <div className="foodItemsCard" key={u.id} >
             <div className="foodItemsLogo">
-              <img src={u.foodImgSrc} alt="" />
+              <Image src={u.foodImgSrc} alt="" />
             </div>
             <div className="foodItemsTopic">{u.title}</div>
             

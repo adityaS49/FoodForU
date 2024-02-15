@@ -16,7 +16,7 @@ const [topdata,setTopData]= useState([])
     setData(demo.items)
     const info = Restaurant.find((value)=>value.id===parseInt(context.idContext,10) );
   setTopData(info)
-  })
+  }, [context.idContext])
 
   
 

@@ -16,24 +16,23 @@ const RegisterForm = () => {
       setError("All fields are required");
       return;
     }
-    
-    try {
-        const resUserExists = await fetch("api/userExists", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ email }),
-          });
-    
-          const { user } = await resUserExists.json();
-    
-          if (user) {
-            setError("User already exists.");
-            return;
-          }
 
-          
+    try {
+      const resUserExists = await fetch("api/userExists", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const { user } = await resUserExists.json();
+
+      if (user) {
+        setError("User already exists.");
+        return;
+      }
+
       const res = await fetch("api/register", {
         method: "POST",
         headers: {
@@ -83,7 +82,7 @@ const RegisterForm = () => {
           <button className="bg-green-400 text-white cursor-pointer px-6 py-2 font-bold">
             Register
           </button>
-          
+
           {error && (
             <div className="bg-red-400 text-white w-fit text-sm py-2 px-4 rounded-md mt-2">
               {error}

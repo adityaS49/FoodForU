@@ -12,10 +12,10 @@ const BannerCard = () => {
       <Header />
       <div className="flex  h-[600px] items-center bg-[#fff] justify-center">
       <div className="  ml-[4rem] w-[40%]">   
-        <Image className=" flex rounded-full" width={800} height={400} src='/assets/banner3.png'/>
+        <Image className=" flex rounded-full" width={800} height={400} alt="" src='/assets/banner3.png'/>
       </div>
         <div className="banner relative">
-        <Image width={150} height={150} className="absolute top-[-6rem] right-[2rem] rounded-full"  src="/assets/Chef.webp"></Image>
+        <Image alt="" width={150} height={150} className="absolute top-[-6rem] right-[2rem] rounded-full"  src="/assets/Chef.webp"></Image>
           <div className="bannerHeading">
             <h1>Ready To Serve...</h1>
           </div>
@@ -38,10 +38,7 @@ const BannerCard = () => {
                 meals, expertly prepared and delivered with care.
               </p>
             </div>
-            <img
-              src="https://images.unsplash.com/photo-1586511925558-a4c6376fe65f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=60"
-              alt=""
-            />
+            <Image width={300} height={300}  src="/assets/nightlife.webp" alt="" />
           </div>
         </Link>
         <div className="card-hover">
@@ -55,7 +52,7 @@ const BannerCard = () => {
               of dining!
             </p>
           </div>
-          <img src="/assets/dining.jpeg" alt="" />
+          <Image width={300} height={300} src="/assets/dining.jpeg" alt="" />
         </div>
         <div className="card-hover">
           <div className="card-hover__content">
@@ -68,7 +65,7 @@ const BannerCard = () => {
               are forged in the depths of the moonlit hours.
             </p>
           </div>
-          <img src="/assets/nightlife.webp" alt="" />
+          <Image width={300} height={300}  src="/assets/nightlife.webp" alt="" />
         </div>
       </div>
 

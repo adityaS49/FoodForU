@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import "./deliveryFeedCard.css";
 import {AppContext} from "@/components/Context/AppContext";
 import Link from "next/link";
+import Image from "next/image";
 const DeliveryFeedCard = ({ u }) => {
 const context  = useContext(AppContext);
 
@@ -12,14 +13,14 @@ const context  = useContext(AppContext);
 
   console.log(u);
   return u.map((item) => (
-    <Link href="/addCart">
+    <Link key={item.id} href="/addCart">
       <div
         className="deliveryCard"
         onClick={() => changeId(item.id)}
         key={item.id}
       >
         <div className="deliveryCardImage">
-          <img src={item.restraImgSrc} alt="" />
+          <Image src={item.restraImgSrc} alt="" width={100} height={100}/>
         </div>
         <div className="saleOff">{item.sale}% off</div>
         <div className="deliveryCardTitle">
