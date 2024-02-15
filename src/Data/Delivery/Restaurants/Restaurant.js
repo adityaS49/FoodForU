@@ -1,7 +1,7 @@
 export const Restaurant = [
   {
     id: 1,
-    restraImgSrc: './assets/CakeShop.webp',
+    restraImgSrc: '/assets/CakeShop.webp',
     name:'Ranchi Bakers Point',
     details: 'Cakes, Pasteries...',
     rating: 4.5,
@@ -11,7 +11,7 @@ export const Restaurant = [
   },
   {
     id: 2,
-    restraImgSrc: './assets/restra2.jpeg',
+    restraImgSrc: '/assets/restra2.jpeg',
     name:'Kaveri Restaurant',
     details: 'Pizza, fast-food...',
     rating: 4.1,
@@ -21,7 +21,7 @@ export const Restaurant = [
   },
   {
     id: 3,
-    restraImgSrc: './assets/restra3.jpeg',
+    restraImgSrc: '/assets/restra3.jpeg',
     name:'GoodSpoon Restaurant',
     details: 'Pizza, fast-food...',
     rating: 3,
@@ -31,7 +31,7 @@ export const Restaurant = [
   },
   {
     id: 4,
-    restraImgSrc: './assets/restra4.jpeg',
+    restraImgSrc: '/assets/restra4.jpeg',
     name:'Vyanjan Restaurant',
     details: 'Pizza, fast-food...',
     rating: 2.1,
@@ -41,7 +41,7 @@ export const Restaurant = [
   },
   {
     id: 5,
-    restraImgSrc: './assets/restra5.jpeg',
+    restraImgSrc: '/assets/restra5.jpeg',
     name:'Kavs Restaurant',
     details: 'Pizza, fast-food...',
     rating: 4.,
@@ -51,7 +51,7 @@ export const Restaurant = [
   },
   {
     id: 6,
-    restraImgSrc: './assets/restra6.jpeg',
+    restraImgSrc: '/assets/restra6.jpeg',
     name:'Kathi-Kabab Restaurant',
     details: 'Pizza, fast-food...',
     rating: 3.5,
@@ -61,7 +61,7 @@ export const Restaurant = [
   },
   {
     id: 7,
-    restraImgSrc: './assets/restra7.jpeg',
+    restraImgSrc: '/assets/restra7.jpeg',
     name:"Domino's",
     details: 'Pizza, fast-food...',
     rating: 4,
@@ -71,7 +71,7 @@ export const Restaurant = [
   },
   {
     id: 8,
-    restraImgSrc: './assets/restra8.jpeg',
+    restraImgSrc: '/assets/restra8.jpeg',
     name:'KFC Restaurant',
     details: 'Pizza, fast-food...',
     rating: 3.6,
@@ -81,7 +81,7 @@ export const Restaurant = [
   },
   {
     id: 9,
-    restraImgSrc: './assets/restra9.jpeg',
+    restraImgSrc: '/assets/restra9.jpeg',
     name:'Flaves Restaurant',
     details: 'Pizza, fast-food...',
     rating: 2.9,
@@ -91,7 +91,7 @@ export const Restaurant = [
   },
   {
     id: 10,
-    restraImgSrc: './assets/restra10.jpeg',
+    restraImgSrc: '/assets/restra10.jpeg',
     name:'Coco & Chilly',
     details: 'Pizza, fast-food...',
     rating: 5,
@@ -101,7 +101,7 @@ export const Restaurant = [
   },
   {
     id: 11,
-    restraImgSrc: './assets/restra1.avif',
+    restraImgSrc: '/assets/restra1.avif',
     name:'Samagra Restaurant',
     details: 'Pizza, fast-food...',
     rating: 4.5,

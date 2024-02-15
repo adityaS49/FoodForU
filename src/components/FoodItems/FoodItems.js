@@ -14,7 +14,7 @@ const FoodItems = () => {
         {Foods.map((u) => (
           <div className="foodItemsCard" key={u.id} >
             <div className="foodItemsLogo">
-              <Image src={u.foodImgSrc} alt="" />
+              <Image width={300} height={300} src={u.foodImgSrc} alt="" />
             </div>
             <div className="foodItemsTopic">{u.title}</div>
             
