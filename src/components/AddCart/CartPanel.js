@@ -64,8 +64,8 @@ const CartPanel = () => {
   const filteredCartItems = context.cartItems.filter((item) => item.count > 0);
 
   return (
-    <div className={styles.cartBanner}>
-      <div className={styles.left}>
+    <div className={`${styles.cartBanner} flex-col lg:flex-row `}>
+      <div className={`${styles.left} lg:w-[50%]`}>
         {!session ? (
           <div className={styles.account}>
             <div className={styles.heading}>
@@ -130,7 +130,7 @@ const CartPanel = () => {
         </div>
       </div>
       {filteredCartItems.length ? (
-        <div className={styles.right}>
+        <div className={`${styles.right} lg:w-[25%]`}>
           <div className={styles.top}>
             <div
               className={` w-[55%] border-b-2 border-solid border-grey pb-3 max-[600px]:w-[100%]`}
