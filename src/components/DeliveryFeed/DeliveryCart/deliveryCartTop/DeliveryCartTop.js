@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 
-import './DeliveryCartTop.css'
+import './deliveryCartTop.css'
 import { Star,CurrencyRupee } from '@mui/icons-material'
 
 const DeliveryCartTop = (props) => {
