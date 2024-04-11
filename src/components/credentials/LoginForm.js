@@ -3,12 +3,11 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import {toast} from 'react-toastify'
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
 
-  
   const router = useRouter();
 
   const handleSubmit = async (e) => {
@@ -20,12 +19,12 @@ const LoginForm = () => {
         password,
         redirect: false,
       });
-
+    
       if (res.error) {
-        setError("Invalid Credentials");
+        toast.error("Invalid Credentials")
         return;
       }
-
+      toast.success("Logged In Successfully")
       router.replace("/");
     } catch (error) {   
       console.log(error);
@@ -40,12 +39,6 @@ const LoginForm = () => {
           <input onChange={(e) => setEmail(e.target.value)} className="py-2 text-sm font-semibold px-3 border-2 bg-zinc-100/40" type="email" placeholder=" E-mail" />
           <input  onChange={(e) => setPassword(e.target.value)} className="py-2 text-sm font-semibold px-3 border-2 bg-zinc-100/40" type="password"  placeholder="Password" />
           <button className="bg-green-400 text-white cursor-pointer px-6 py-2 font-bold">Login</button>
-
-          {error && (
-            <div className="bg-red-500 text-white w-fit text-sm py-1 px-3 rounded-md mt-2">
-              {error}
-            </div>
-          )}
 
           <Link className="text-sm mt-3 text-right font-semibold" href='/signup'>
           Do not have an account? <span className="font-sm underline">Register</span>
