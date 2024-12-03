@@ -1,13 +1,13 @@
-// import { useSession } from "next-auth/react";
 
 export const addNewAddress = async ({ addressFormData, userEmail }) => {
+  
   try {
     const res = await fetch("/api/addresses/addNewAddress", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ addressFormData, userEmail }),
+      body: JSON.stringify({ addressFormData, userEmail}),
     });
     const data = await res.json();
 
@@ -17,21 +17,19 @@ export const addNewAddress = async ({ addressFormData, userEmail }) => {
   }
 };
 
-
 export const fetchAllAddresses = async (userEmail) => {
 
-  // const { data: session } = useSession();
-  // const userEmail = session.user.email;
   console.log(userEmail);
+
   try {
     const apiUrl = `/api/addresses/getAllAddress?email=${userEmail}`;
-    const res = await fetch(apiUrl, {
+    const res = await fetch(apiUrl, { 
       method: "GET",
       
     });
 
     if (!res.ok) {
-      // Handle non-successful HTTP status codes
+      
       throw new Error(`Request failed with status: ${res.status}`);
      
     }
@@ -40,7 +38,8 @@ export const fetchAllAddresses = async (userEmail) => {
     return data;
   } catch (error) {
     console.error(error);
-    // Handle the error, e.g., show an error message to the user or return a default value
+   
+
     return { error: "An error occurred while fetching addresses.", userEmail };
   }
 };

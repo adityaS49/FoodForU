@@ -1,14 +1,14 @@
 import { NextResponse } from "next/server";
-import { connectMongoDB } from "../../../../../lib/mongodb"; // Replace with the correct path to your database connection code
-import Address from "../../../../../models/address"; // Replace with the correct path to your Address model
+import { connectMongoDB } from "../../../../../lib/mongodb"; 
+import Address from "../../../../../models/address"; 
 
 export async function GET(req) {
-  
   try {
-    // const {data:session} = useSession();
     const {searchParams} = new URL(req.url);
-    const userEmail = searchParams.get('email');
 
+    const userEmail = searchParams.get('email');
+    
+    console.log(userEmail);
     if (!userEmail) {
 
       return NextResponse.json(
@@ -17,13 +17,12 @@ export async function GET(req) {
       );
     }
     try {
-      await connectMongoDB(); // Connect to your MongoDB database
-
-      // Find all addresses in the MongoDB "Addresses" collection that match the user's email
+      await connectMongoDB(); 
       const addressesForEmail = await Address.find({ email: userEmail.userEmail});
+
 console.log(addressesForEmail,"addreses fetched");
       if (addressesForEmail.length > 0) {
-        // Addresses retrieved successfully
+      
         return NextResponse.json(
           {
             message: "Addresses retrieved successfully.",
@@ -32,7 +31,7 @@ console.log(addressesForEmail,"addreses fetched");
           { status: 200 }
         );
       } else {
-        // No addresses found for the specified email
+        
         return NextResponse.json(
           { message: "No addresses found for the specified email." },
           { status: 404 }

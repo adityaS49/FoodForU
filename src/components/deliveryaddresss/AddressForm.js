@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { AppContext } from "@/components/Context/AppContext";
 import { useSession } from "next-auth/react";
 import { addNewAddress, updateAddress } from "@/services/address/page";
-
+import {toast} from 'react-toastify'
 const AddressForm = () => {
   const { data: session } = useSession();
   console.log("Session:", session);
@@ -46,7 +46,10 @@ const AddressForm = () => {
               userEmail: session.user.email,
             });
       console.log(response);
-      console.log("Address added/updated successfully:", response.data);
+      
+      toast.success("Address updated successfully")
+      console.log("Address added/updated successfully:",
+       response.data);
       setAddressFormData({
         streetAddress: "",
         city: "",

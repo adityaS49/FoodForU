@@ -133,7 +133,7 @@ const CartPanel = () => {
         <div className={`${styles.right} lg:w-[25%]`}>
           <div className={styles.top}>
             <div
-              className={` w-[55%] border-b-2 border-solid border-grey pb-3 max-[600px]:w-[100%]`}
+              className={` w-[45%] border-b-2 border-solid border-grey pb-3 max-[600px]:w-[70%]`}
             >
               <div className="deliveryCardTitle">
                 <div

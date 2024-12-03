@@ -1,27 +1,23 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AppContext, CartProvider } from "@/components/Context/AppContext";
+import {toast} from 'react-toastify'
 
 const AddButton = ({ v }) => {
   const { cartContextValue } = useContext(AppContext);
-  // console.log(v);
-  // console.log(cartItems);
-  // const [flag,setFlag] =useState(false)
-
-  // const x= cartItems.filter(item=>item.id==v.id)
-  // console.log(Object. keys(x). length)
-  // if(Object. keys(x). length>0) setFlag(true)
-  // else setFlag(false)
+ 
   const addId = (item) => {
+    
     cartContextValue.addItemToCart(item);
-    console.log(item);
+    
   };
 
   const handleAddToCart = (cartItem) => {
     const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
 
     // Add the new item to the cart
+    toast.success("Item Added To Cart")
     existingCart.push(cartItem);
-
+    console.log(cartItem);
    existingCart.map((item)=>{
     return (
       addId(item)

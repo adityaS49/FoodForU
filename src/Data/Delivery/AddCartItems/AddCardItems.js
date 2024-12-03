@@ -60,64 +60,6 @@ export const AddCartItems = [
         name: "Pasteries",
         value: [
           {
-            id: 1,
-            FoodState: "/assets/veg.png",
-            imgSrc: "/assets/blackCake.jpg",
-            seller: "BestSeller",
-            name: "Black Forest Cake",
-            quantity: "400g",
-            price: 699,
-          },
-          {
-            id: 2,
-            FoodState: "/assets/veg.png",
-            imgSrc: "/assets/blackCake.jpg",
-            seller: "BestSeller",
-            name: "Red Velvet Cake",
-            quantity: "500g",
-            price: 299,
-          },
-
-          {
-            id: 3,
-            FoodState: "/assets/veg.png",
-            imgSrc: "/assets/blackCake.jpg",
-            seller: "BestSeller",
-            name: "Chocolate Ruffle Cake",
-            quantity: "400g",
-            price: 499,
-          },
-
-          {
-            id: 4,
-            FoodState: "/assets/veg.png",
-            imgSrc: "/assets/blackCake.jpg",
-            seller: "BestSeller",
-            name: "Strawberry Cake",
-            quantity: "600g",
-            price: 599,
-          },
-          {
-            id: 5,
-            FoodState: "/assets/veg.png",
-            imgSrc: "/assets/blackCake.jpg",
-            seller: "BestSeller",
-            name: "Vanilla Cream Cake",
-            quantity: "700g",
-            price: 459,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id:2,
-    items: [
-      {
-        id: 1,
-        name: "IceCream",
-        value: [
-          {
             id: 6,
             FoodState: "/assets/veg.png",
             imgSrc: "/assets/blackCake.jpg",
@@ -128,7 +70,7 @@ export const AddCartItems = [
           },
           {
             id: 7,
-            FoodState: "/assets/nonveg.png",
+            FoodState: "/assets/veg.png",
             imgSrc: "/assets/blackCake.jpg",
             seller: "BestSeller",
             name: "Red Velvet Cake",
@@ -148,7 +90,7 @@ export const AddCartItems = [
 
           {
             id: 9,
-            FoodState: "/assets/nonveg.png",
+            FoodState: "/assets/veg.png",
             imgSrc: "/assets/blackCake.jpg",
             seller: "BestSeller",
             name: "Strawberry Cake",
@@ -166,9 +108,14 @@ export const AddCartItems = [
           },
         ],
       },
+    ],
+  },
+  {
+    id:2,
+    items: [
       {
-        id: 2,
-        name: "Waffles",
+        id: 1,
+        name: "IceCream",
         value: [
           {
             id: 11,
@@ -181,7 +128,7 @@ export const AddCartItems = [
           },
           {
             id: 12,
-            FoodState: "/assets/veg.png",
+            FoodState: "/assets/nonveg.png",
             imgSrc: "/assets/blackCake.jpg",
             seller: "BestSeller",
             name: "Red Velvet Cake",
@@ -201,7 +148,7 @@ export const AddCartItems = [
 
           {
             id: 14,
-            FoodState: "/assets/veg.png",
+            FoodState: "/assets/nonveg.png",
             imgSrc: "/assets/blackCake.jpg",
             seller: "BestSeller",
             name: "Strawberry Cake",
@@ -219,14 +166,9 @@ export const AddCartItems = [
           },
         ],
       },
-    ],
-  },
-  {
-    id:3,
-    items: [
       {
-        id: 1,
-        name: "ChocoChips",
+        id: 2,
+        name: "Waffles",
         value: [
           {
             id: 16,
@@ -239,7 +181,7 @@ export const AddCartItems = [
           },
           {
             id: 17,
-            FoodState: "/assets/nonveg.png",
+            FoodState: "/assets/veg.png",
             imgSrc: "/assets/blackCake.jpg",
             seller: "BestSeller",
             name: "Red Velvet Cake",
@@ -259,7 +201,7 @@ export const AddCartItems = [
 
           {
             id: 19,
-            FoodState: "/assets/nonveg.png",
+            FoodState: "/assets/veg.png",
             imgSrc: "/assets/blackCake.jpg",
             seller: "BestSeller",
             name: "Strawberry Cake",
@@ -277,9 +219,14 @@ export const AddCartItems = [
           },
         ],
       },
+    ],
+  },
+  {
+    id:3,
+    items: [
       {
-        id: 2,
-        name: "Cookies",
+        id: 1,
+        name: "ChocoChips",
         value: [
           {
             id: 21,
@@ -292,7 +239,7 @@ export const AddCartItems = [
           },
           {
             id: 22,
-            FoodState: "/assets/veg.png",
+            FoodState: "/assets/nonveg.png",
             imgSrc: "/assets/blackCake.jpg",
             seller: "BestSeller",
             name: "Red Velvet Cake",
@@ -312,7 +259,7 @@ export const AddCartItems = [
 
           {
             id: 24,
-            FoodState: "/assets/veg.png",
+            FoodState: "/assets/nonveg.png",
             imgSrc: "/assets/blackCake.jpg",
             seller: "BestSeller",
             name: "Strawberry Cake",
@@ -321,6 +268,59 @@ export const AddCartItems = [
           },
           {
             id: 25,
+            FoodState: "/assets/veg.png",
+            imgSrc: "/assets/blackCake.jpg",
+            seller: "BestSeller",
+            name: "Vanilla Cream Cake",
+            quantity: "700g",
+            price: 459,
+          },
+        ],
+      },
+      {
+        id: 2,
+        name: "Cookies",
+        value: [
+          {
+            id: 26,
+            FoodState: "/assets/veg.png",
+            imgSrc: "/assets/blackCake.jpg",
+            seller: "BestSeller",
+            name: "Black Forest Cake",
+            quantity: "400g",
+            price: 699,
+          },
+          {
+            id: 27,
+            FoodState: "/assets/veg.png",
+            imgSrc: "/assets/blackCake.jpg",
+            seller: "BestSeller",
+            name: "Red Velvet Cake",
+            quantity: "500g",
+            price: 299,
+          },
+
+          {
+            id: 28,
+            FoodState: "/assets/veg.png",
+            imgSrc: "/assets/blackCake.jpg",
+            seller: "BestSeller",
+            name: "Chocolate Ruffle Cake",
+            quantity: "400g",
+            price: 499,
+          },
+
+          {
+            id: 29,
+            FoodState: "/assets/veg.png",
+            imgSrc: "/assets/blackCake.jpg",
+            seller: "BestSeller",
+            name: "Strawberry Cake",
+            quantity: "600g",
+            price: 599,
+          },
+          {
+            id: 30,
             FoodState: "/assets/veg.png",
             imgSrc: "/assets/blackCake.jpg",
             seller: "BestSeller",

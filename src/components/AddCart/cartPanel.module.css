@@ -1,7 +1,7 @@
 .cartBanner {
   display: flex;
   padding: 20px;
-  justify-content: center;
+  justify-content: space-around;
   gap: 2rem;
 }
 .left {
@@ -9,7 +9,7 @@
   flex-direction: column;
   padding: 10px;
   gap: 2rem;
-  width: 100%;
+  width: 50%;
 }
 .account {
   display: flex;
@@ -60,18 +60,18 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 2rem 20px;
+  padding: 2rem 4rem;
   background-color: aliceblue;
 }
 .payment {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 2rem 20px;
+  padding: 2rem 4rem;
   background-color: aliceblue;
 }
 .right {
-  width: 100%;
+  width: 50%;
   height: fit-content;
   display: flex;
   flex-direction: column;

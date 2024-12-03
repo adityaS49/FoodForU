@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { AppContext } from "../Context/AppContext";
 import { getSession } from "next-auth/react";
 import { fetchAllAddresses } from "../../services/address/page";
-
+import {toast} from 'react-toastify'
 const DeliveryAddress = () => {
   const {  setAddressFormData } = useContext(AppContext);
   const {  setShowAddressForm } = useContext(AppContext);
@@ -21,6 +21,7 @@ const DeliveryAddress = () => {
       postalCode: getCurrentAddress.postalCode,
     })
     setCurrentEdittedAddressId(getCurrentAddress._id);
+
   }
  
   useEffect(() => {

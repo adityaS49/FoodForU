@@ -1,6 +1,6 @@
 "use client"
 import {React,useContext, useState} from "react";
-import { ArrowDownward, Person, Search, ShoppingCart } from "@mui/icons-material";
+import { ArrowDownward, Person, Person2, Search, ShoppingCart } from "@mui/icons-material";
 import {AppContext} from "@/components/Context/AppContext";
 import Link from "next/link";
 import { signOut } from "next-auth/react";
@@ -14,7 +14,7 @@ const Header = () => {
     setActive(prevActive => !prevActive);
   }
   return (
-    <header className={`flex justify-between gap-8 py-4 px-8 w-[100%] mb-5 max-[900px]:flex-col bg-[#c7c4c4] `}> 
+    <header className={`flex justify-between gap-8 py-4 px-8 w-[100%]  max-[900px]:flex-col bg-[#c7c4c4]`}> 
       <div className={`flex items-center justify-center max-[900px]:shadow-[1px_3px_18px_0px_rgba(0,0,0,0.25)] rounded-xl`}>
         <div className="logoHeading">
         <Link href="/">
@@ -42,7 +42,7 @@ const Header = () => {
       <ShoppingCart /> Cart <span>({context.cartItems.length})</span>
     </span>
         ):(
-          <span className={`flex items-center cursor-pointer py-2 px-4 rounded border-black'}`}>
+          <span className={`flex items-center cursor-pointer py-2 px-4 rounded border-black font-bold'}`}>
       <ShoppingCart /> Cart <span></span>
     </span>
         )
@@ -53,9 +53,9 @@ const Header = () => {
      
       {
         session?(<span className='cursor-pointer flex flex-col gap-2 relative items-center'>
-        <div className="flex gap-1 items-center justify-center" onClick={handleClick}>
-          {session.user.name} <ArrowDownward style={{fontSize:'16px'}}/>
-        </div>
+        <button className="flex gap-1 items-center justify-center font-bold" onClick={handleClick}>
+          {session.user.name} <Person2 style={{fontSize:'24px'}}/>
+        </button>
         <div className="absolute top-10" style={{ display: active ? 'block' : 'none' }}>
         <button className="bg-red-400 rounded text-white px-6 py-2" onClick={signOut}>Logout</button>
       </div>
