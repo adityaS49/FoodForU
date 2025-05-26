@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import BannerCard from "@/components/BannerCard/BannerCard";
 import React from "react";
 const Home = () => {
@@ -7,7 +7,6 @@ const Home = () => {
       <div className="w-[100%]">
         <BannerCard />
       </div>
-
     </div>
   );
 };

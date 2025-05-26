@@ -1,70 +1,90 @@
-"use client"
-import {React,useContext, useState} from "react";
-import { ArrowDownward, Person, Person2, Search, ShoppingCart } from "@mui/icons-material";
-import {AppContext} from "@/components/Context/AppContext";
+"use client";
+import React, { useContext, useState } from "react";
+import {
+  Search,
+  ShoppingCart,
+  Person,
+  Person2,
+} from "@mui/icons-material";
+import { AppContext } from "@/components/Context/AppContext";
 import Link from "next/link";
 import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
+
 const Header = () => {
   const context = useContext(AppContext);
-  const {data:session} = useSession();
-  const [active,setActive] = useState(false)
+  const { data: session } = useSession();
+  const [active, setActive] = useState(false);
 
-  const  handleClick = ()=>{
-    setActive(prevActive => !prevActive);
-  }
+  const handleClick = () => setActive((prev) => !prev);
+
   return (
-    <header className={`flex justify-between gap-8 py-4 px-8 w-[100%]  max-[900px]:flex-col bg-[#c7c4c4]`}> 
-      <div className={`flex items-center justify-center max-[900px]:shadow-[1px_3px_18px_0px_rgba(0,0,0,0.25)] rounded-xl`}>
-        <div className="logoHeading">
-        <Link href="/">
-          <h3 className={`text-[30px] font-semibold 
-           cursor-pointer`}>Food For U</h3>
-           </Link>
-        </div>
+    <header className="flex flex-wrap justify-between items-center p-4 lg:px-12 bg-[#f0efef] shadow-md">
+      {/* Logo */}
+      <div className="mb-4 lg:mb-0">
+        <Link href="/" className="text-2xl lg:text-3xl font-bold text-orange-600">
+          Food For U
+        </Link>
+      </div>
 
-      </div>    
-      <div className={`w-[40%] shadow-[1px_3px_18px_0px_rgba(0,0,0,0.25)] rounded-xl pl-3  max-[900px]:w-[100%] bg-white `}>
-        <div className={` flex items-center justify-center gap-2 w-[100%]`}>
-          <Search style={{ color: "black" }} />
+      {/* Search Bar */}
+      <div className="w-full lg:w-[40%] mb-4 lg:mb-0">
+        <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
+          <Search className="text-gray-600" />
           <input
-           placeholder="Search for restaurant, cuisine, or a dish"
-            className={`rounded-xl w-[100%] h-[50px] focus:outline-none max-[500px]:text-[10px]::placeholder` }
+            placeholder="Search for restaurant, cuisine, or a dish"
+            className="ml-2 w-full outline-none text-sm"
             type="text"
           />
         </div>
       </div>
-      <div className="options flex gap-4  items-center justify-center">
-      <Link href="/cart">
-      {
-        context.cartItems.length > 0 ?(
-          <span className={`flex items-center cursor-pointer  py-2 px-4 rounded bg-[#1aed1a] border-green-500 text-white`}>
-      <ShoppingCart /> Cart <span>({context.cartItems.length})</span>
-    </span>
-        ):(
-          <span className={`flex items-center cursor-pointer py-2 px-4 rounded border-black font-bold'}`}>
-      <ShoppingCart /> Cart <span></span>
-    </span>
-        )
 
-      }
-      
-      </Link>
-     
-      {
-        session?(<span className='cursor-pointer flex flex-col gap-2 relative items-center'>
-        <button className="flex gap-1 items-center justify-center font-bold" onClick={handleClick}>
-          {session.user.name} <Person2 style={{fontSize:'24px'}}/>
-        </button>
-        <div className="absolute top-10" style={{ display: active ? 'block' : 'none' }}>
-        <button className="bg-red-400 rounded text-white px-6 py-2" onClick={signOut}>Logout</button>
-      </div>
-        </span>):(
+      {/* Options: Cart & Login/User */}
+      <div className="flex items-center gap-4">
+        {/* Cart */}
+        <Link href="/cart">
+          {context.cartItems.length > 0 ? (
+            <div className="flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-full cursor-pointer hover:bg-green-600 transition">
+              <ShoppingCart />
+              <span>Cart ({context.cartItems.length})</span>
+            </div>
+          ) : (
+            <div className="flex items-center gap-2 border border-gray-700 px-4 py-2 rounded-full cursor-pointer hover:bg-gray-100 transition">
+              <ShoppingCart />
+              <span>Cart</span>
+            </div>
+          )}
+        </Link>
+
+        {/* Sign In / User Dropdown */}
+        {session ? (
+          <div className="relative">
+            <button
+              className="flex items-center gap-2 font-semibold text-gray-800 hover:text-orange-600 transition"
+              onClick={handleClick}
+            >
+              {session.user.name}
+              <Person2 />
+            </button>
+            {active && (
+              <div className="absolute right-0 mt-2 bg-white border rounded shadow-md z-10">
+                <button
+                  onClick={signOut}
+                  className="w-full px-6 py-2 text-red-600 hover:bg-red-100 transition text-left"
+                >
+                  Logout
+                </button>
+              </div>
+            )}
+          </div>
+        ) : (
           <Link href="/login">
-          <span className='cursor-pointer font-semibold  flex justify-center gap-1 items-center'> <Person/> Sign In</span>
-          </Link>)
-      }
-      
+            <div className="flex items-center gap-2 text-gray-800 font-semibold hover:text-orange-600 transition cursor-pointer">
+              <Person />
+              <span>Sign In</span>
+            </div>
+          </Link>
+        )}
       </div>
     </header>
   );

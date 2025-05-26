@@ -18,7 +18,7 @@
   padding: 20px;
   background-color: aliceblue;
 }
-.heading{
+.heading {
   display: flex;
   align-items: center;
   gap: 1rem;

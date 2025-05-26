@@ -7,29 +7,41 @@ import Image from "next/image";
 
 const BannerCard = () => {
   const handleClick = () => {};
+
   return (
     <>
       <Header />
-      <div className="flex flex-col lg:flex-row  h-[600px] items-center bg-[#fff] justify-center">
-        <div>
-          <Image
-            alt=""
-            width={200}
-            height={200}
-            className=""
-            src="/assets/Chef.webp"
-          ></Image>
+      {/* Hero Section */}
+      <div className="flex flex-col-reverse lg:flex-row items-center justify-between p-6 lg:p-16 bg-gradient-to-r from-orange-100 via-white to-orange-50">
+        {/* Text Content */}
+        <div className="text-center lg:text-left max-w-xl space-y-4">
+          <h1 className="text-4xl lg:text-5xl font-bold text-orange-600">
+            Ready To Serve...
+          </h1>
+          <h3 className="text-lg lg:text-xl text-gray-700">
+            Discover the best food & drinks and enjoy leisure life!
+          </h3>
+          <button
+            onClick={handleClick}
+            className="mt-4 px-6 py-3 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition"
+          >
+            Explore Now
+          </button>
         </div>
 
-        <div className="banner relative">
-          <div className="bannerHeading">
-            <h1>Ready To Serve...</h1>
-          </div>
-          <div className="bannerPara">
-            <h3>Discover the best food & drinks and Enjoy leasure life!!</h3>
-          </div>
+        {/* Image */}
+        <div className="mb-6 lg:mb-0">
+          <Image
+            alt="Chef"
+            width={300}
+            height={300}
+            className="rounded-full shadow-lg"
+            src="/assets/Chef.webp"
+          />
         </div>
       </div>
+
+      {/* Navigation Cards Section */}
       <div className="nav-pages">
         <Link href="/delivery">
           <div className="card-hover" onClick={handleClick}>

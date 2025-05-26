@@ -1,7 +1,12 @@
 "use client";
 import { React, useContext, useState } from "react";
 import styles from "./cartPanel.module.css";
-import { CurrencyRupee, LocationOn, Payment, Person } from "@mui/icons-material";
+import {
+  CurrencyRupee,
+  LocationOn,
+  Payment,
+  Person,
+} from "@mui/icons-material";
 import { AppContext } from "@/components/Context/AppContext";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,19 +15,15 @@ import AddressForm from "../deliveryaddresss/AddressForm";
 import DeliveryAddress from "../deliveryaddresss/DeliveryAddress";
 
 const CartPanel = () => {
-  const { data: session } = useSession();;
+  const { data: session } = useSession();
 
   const context = useContext(AppContext);
-  const { showAddressForm , setShowAddressForm  } = useContext(AppContext);
+  const { showAddressForm, setShowAddressForm } = useContext(AppContext);
   {
-    context.cartItems?(
-      console.log(context.cartItems)
-    ):null
+    context.cartItems ? console.log(context.cartItems) : null;
   }
   {
-    context.totalPrice?(
-      console.log(context.totalPrice)
-    ):null
+    context.totalPrice ? console.log(context.totalPrice) : null;
   }
 
   const handleIncrement = (item) => {
@@ -69,9 +70,9 @@ const CartPanel = () => {
         {!session ? (
           <div className={styles.account}>
             <div className={styles.heading}>
-            <div className="bg-zinc-200 ml-[-3rem] shadow-sm rounded p-3 w-fit">
-            <Person/>
-          </div>
+              <div className="bg-zinc-200 ml-[-3rem] shadow-sm rounded p-3 w-fit">
+                <Person />
+              </div>
               <h1>Account</h1>
               <p>
                 To place your order now, log in to your existing account or sign
@@ -102,28 +103,26 @@ const CartPanel = () => {
         <div className={styles.address}>
           <div className={styles.heading}>
             <div className="bg-zinc-200 ml-[-3rem] shadow-sm rounded p-3 w-fit">
-              <LocationOn/>
+              <LocationOn />
             </div>
-             <h1>Delivery Address</h1>
+            <h1>Delivery Address</h1>
           </div>
-          
-          <DeliveryAddress/>
+
+          <DeliveryAddress />
           <div>
-          <button className="px-4 py-2 bg-gray-500 text-white" onClick={()=>setShowAddressForm(!showAddressForm)}>
-          {showAddressForm?"Hide AddressForm":"Add New Address"}
-        </button>
+            <button
+              className="px-4 py-2 bg-gray-500 text-white"
+              onClick={() => setShowAddressForm(!showAddressForm)}
+            >
+              {showAddressForm ? "Hide AddressForm" : "Add New Address"}
+            </button>
           </div>
-          {
-            showAddressForm?(
-              <AddressForm/>
-            ):null
-          }
-          
+          {showAddressForm ? <AddressForm /> : null}
         </div>
         <div className={styles.payment}>
           <div className={styles.heading}>
-          <div className="bg-zinc-200 ml-[-3rem] shadow-sm rounded p-3 w-fit">
-              <Payment/>
+            <div className="bg-zinc-200 ml-[-3rem] shadow-sm rounded p-3 w-fit">
+              <Payment />
             </div>
             <h1>Payment</h1>
           </div>
@@ -249,12 +248,12 @@ const CartPanel = () => {
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center w-[35%] h-[600px] gap-8">
-        <div className="gap-2">
-        <h1 className="text-center text-[20px] font-bold ">
-        Oppsss!! Your Cart is empty🙄
-        </h1>
-        <p>You can go to home page to view more restaurants</p>
-        </div>
+          <div className="gap-2">
+            <h1 className="text-center text-[20px] font-bold ">
+              Oppsss!! Your Cart is empty🙄
+            </h1>
+            <p>You can go to home page to view more restaurants</p>
+          </div>
           <div className="bg-orange-500 rounded p-4 cursor-pointer">
             <Link href="/delivery">
               <h6 className="text-white font-bold">SEE RESTAURANTS NEAR YOU</h6>

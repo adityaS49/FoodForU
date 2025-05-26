@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Caladea:ital@1&family=Dancing+Script:wght@700&family=Merriweather:ital@1&family=PT+Serif&family=Poppins&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Caladea:ital@1&family=Courgette&family=Dancing+Script:wght@700&family=Merriweather:ital@1&family=PT+Serif&family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Caladea:ital@1&family=Courgette&family=Dancing+Script:wght@700&family=Merriweather:ital@1&family=PT+Serif&family=Poppins&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap");
 .banner {
   display: flex;
@@ -11,37 +11,34 @@
   justify-content: center;
   color: black;
   z-index: 3;
-
 }
 .bannerHeading h1 {
   font-size: 70px;
-  font-family: 'Courgette', cursive;
-
+  font-family: "Courgette", cursive;
 }
-
 
 .bannerPara h3 {
-    text-align: center;
+  text-align: center;
   font-size: 24px;
-  font-family: 'Courgette', cursive;
+  font-family: "Courgette", cursive;
   color: rgb(113, 109, 109);
 }
-.searchBar{
-    width: 40%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    border-radius: 10px;
-    gap: 10px;
-    color: black;
-    font-size: 16px ;
-    font-weight: 400;
-    margin-top: 1rem;
+.searchBar {
+  width: 40%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 10px;
+  gap: 10px;
+  color: black;
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 1rem;
 }
-.searchBar input:focus{
-    outline: none;
+.searchBar input:focus {
+  outline: none;
 }
 
 img {
@@ -68,13 +65,13 @@ h5 {
   margin-top: 0;
   margin-bottom: 0;
 }
-.nav-pages{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    gap: 3rem;
+.nav-pages {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 3rem;
 }
 .card-hover {
   width: 360px;
@@ -118,7 +115,8 @@ h5 {
   will-change: bottom, background-color, transform, padding;
   z-index: 1;
 }
-.card-hover__content::before, .card-hover__content::after {
+.card-hover__content::before,
+.card-hover__content::after {
   content: "";
   width: 360px;
   height: 120px;
@@ -130,12 +128,12 @@ h5 {
 .card-hover__content::before {
   top: -80px;
   -webkit-clip-path: ellipse(60% 80px at bottom center);
-          clip-path: ellipse(60% 80px at bottom center);
+  clip-path: ellipse(60% 80px at bottom center);
 }
 .card-hover__content::after {
   bottom: -80px;
   -webkit-clip-path: ellipse(60% 80px at top center);
-          clip-path: ellipse(60% 80px at top center);
+  clip-path: ellipse(60% 80px at top center);
 }
 .card-hover__title {
   font-size: 1.5rem;
@@ -198,21 +196,21 @@ h5 {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: center;
-     object-position: center;
+  object-position: center;
   z-index: -1;
   transform: scale(1.2);
   transition: 0.35s 0.35s transform cubic-bezier(0.1, 0.72, 0.4, 0.97);
 }
-@media(max-width:600px){
-    .bannerHeading h1{
-        font-size: 50px;
-    }
-    .bannerPara h3{
-        font-size: 30px;
-    }
-    .searchBar{
-        width: 95%;
-    }
+@media (max-width: 600px) {
+  .bannerHeading h1 {
+    font-size: 50px;
+  }
+  .bannerPara h3 {
+    font-size: 30px;
+  }
+  .searchBar {
+    width: 95%;
+  }
 }

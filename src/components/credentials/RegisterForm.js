@@ -1,8 +1,8 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import {toast} from 'react-toastify'
+import { toast } from "react-toastify";
 const RegisterForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -29,9 +29,10 @@ const RegisterForm = () => {
       });
 
       const { user } = await resUserExists.json();
+      console.log(user);
 
       if (user) {
-        toast.error("User already exists.")
+        toast.error("User already exists.");
         setError("User already exists.");
         return;
       }
@@ -47,19 +48,19 @@ const RegisterForm = () => {
           password,
         }),
       });
-      
+
       const data = await res.json();
       if (res.ok) {
-        toast.success(data.message)
-      const form = e.target;
+        toast.success(data.message);
+        const form = e.target;
         form.reset();
         router.push("/");
       } else {
-        toast.error("User registration failed")
+        toast.error("User registration failed");
         setError("User registration failed");
       }
     } catch (error) {
-      toast.error("Error during registration")
+      toast.error("Error during registration");
       setError("Error during registration");
     }
   };
