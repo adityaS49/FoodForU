@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { signIn } from "next-auth/react";
 
-const GoogleLoginComponent = () => {
+const GoogleLoginComponent = ({loading,setLoading}) => {
   const [error, setError] = useState("");
   const router = useRouter();
 
@@ -68,6 +68,7 @@ const GoogleLoginComponent = () => {
             toast.error("Invalid Credentials");
             return;
           }
+          setLoading(false);
           toast.success("Logged In Successfully");
           router.replace("/");
         } catch (error) {
@@ -90,7 +91,7 @@ const GoogleLoginComponent = () => {
   };
 
   return (
-    <div>
+    <div onClick={() => setLoading(true)}>
       <GoogleLogin
         clientId="850793985212-lvqtlconfdj5mss6v39c421gelqtj01i.apps.googleusercontent.com"
         buttonText="Login with Google"
@@ -98,6 +99,7 @@ const GoogleLoginComponent = () => {
         onFailure={OnFailure}
         cookiePolicy={"single_host_origin"}
         isSignedIn={false}
+      
       />
     </div>
   );

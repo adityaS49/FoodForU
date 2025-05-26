@@ -6,12 +6,13 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import GoogleLoginComponent from "./GoogleLogin";
 import { gapi } from "gapi-script";
+import Loader from "../Loader/Loader";
 const LoginForm = () => {
   const clientid =
     "850793985212-lvqtlconfdj5mss6v39c421gelqtj01i.apps.googleusercontent.com";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -38,6 +39,7 @@ const LoginForm = () => {
         toast.error("Invalid Credentials");
         return;
       }
+      setLoading(false);
       toast.success("Logged In Successfully");
       router.replace("/");
     } catch (error) {
@@ -62,7 +64,7 @@ const LoginForm = () => {
             type="password"
             placeholder="Password"
           />
-          <button className="bg-green-400 text-white cursor-pointer px-6 py-2 font-bold">
+          <button onClick={()=>{setLoading(true)}} className="bg-green-400 text-white cursor-pointer px-6 py-2 font-bold">
             Login
           </button>
 
@@ -75,8 +77,9 @@ const LoginForm = () => {
           </Link>
         </form>
       </div>
+      {loading && <Loader text = "Waiting for Login" />}
       <div>
-        <GoogleLoginComponent />
+        <GoogleLoginComponent  loading={loading} setLoading={setLoading}/>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
-const RegisterForm = () => {
+const RegisterForm = ({setLoading}) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -53,6 +53,7 @@ const RegisterForm = () => {
       if (res.ok) {
         toast.success(data.message);
         const form = e.target;
+        setLoading(false);
         form.reset();
         router.push("/");
       } else {
@@ -89,7 +90,7 @@ const RegisterForm = () => {
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button className="bg-green-400 text-white cursor-pointer px-6 py-2 font-bold">
+          <button onClick={()=>{setLoading(true)}} className="bg-green-400 text-white cursor-pointer px-6 py-2 font-bold">
             Register
           </button>
 

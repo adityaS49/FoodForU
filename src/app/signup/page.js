@@ -1,10 +1,14 @@
+"use client";
 import RegisterForm from "@/components/credentials/RegisterForm";
-import React from "react";
+import Loader from "@/components/Loader/Loader";
+import React, { useState } from "react";
 
 const Register = () => {
+  const [loading, setLoading] = useState(false);
   return (
     <div>
-      <RegisterForm />
+      {loading&&<Loader text="Waiting to Register" />}
+      <RegisterForm setLoading = {setLoading}/>
     </div>
   );
 };
